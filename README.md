@@ -12,6 +12,13 @@ Oh My Posh was designed to use Nerd Fonts. Nerd Fonts are popular fonts that are
 brew install --cask font-meslo-lg-nerd-font
 ```
 
+> **Note (macOS):** Apple's system bash can't run oh-my-posh's init script. Install Homebrew's bash and make it your login shell:
+
+```sh
+brew install bash
+chsh -s /opt/homebrew/bin/bash   # Apple Silicon; /usr/local/bin/bash on Intel
+```
+
 ## Oh My Zsh
 
 The custom shell config (`home/oh-myzsh/custom/aliases.zsh`) ships aliases backed by external tools — some have requirements:
