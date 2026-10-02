@@ -1,0 +1,23 @@
+adjust-cell-height = 5
+
+font-family = "Meslo LGM NF"
+font-size=14
+font-feature=+liga
+font-thicken=true
+font-thicken-strength=1
+
+background-opacity = 0.9
+background-blur = 20
+unfocused-split-opacity = 0.70
+macos-titlebar-style = tabs
+
+quit-after-last-window-closed=true
+confirm-close-surface=false
+window-inherit-working-directory=true
+
+scrollback-limit = 100000000
+
+mouse-reporting = false
+
+window-padding-balance = true
+window-padding-color = background
