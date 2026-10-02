@@ -40,7 +40,7 @@
           "background": "#303030",
           "foreground": "#6CA35E",
           "foreground_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FFCC00{{ end }}",
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FFD866{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}",
             "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
             "{{ if gt .Behind 0 }}#B388FF{{ end }}"
