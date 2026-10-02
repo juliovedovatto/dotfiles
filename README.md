@@ -11,3 +11,10 @@ Oh My Posh was designed to use Nerd Fonts. Nerd Fonts are popular fonts that are
 ```sh
 brew install --cask font-meslo-lg-nerd-font
 ```
+
+## Oh My Zsh
+
+The custom shell config (`home/oh-myzsh/custom/aliases.zsh`) ships aliases backed by external tools — some have requirements:
+
+- `lsd` — backer of the `ls`, `ll`, `la`, `l`, and `lt` aliases:
+  - install: `brew install lsd`

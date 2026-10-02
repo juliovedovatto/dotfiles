@@ -1,5 +1,7 @@
 # CUSTOM COMMANDS -----------------------------------------------------------------------------------------------------
 
+# Detects the project's package manager from lockfiles / package.json
+# and echoes its name (bun, pnpm, yarn, or npm).
 _pm() {
   if [[ -f package.json ]]; then
     local pm
@@ -18,6 +20,8 @@ _pm() {
   echo npm
 }
 
+# Runs a command via the detected package manager (e.g. `d` -> `_pm_exec run dev`).
+# Prefers bun directly when present; falls back to corepack for shimmed managers.
 _pm_exec() {
   local pm=$(_pm)
   if [[ "$pm" == bun ]]; then
@@ -29,6 +33,7 @@ _pm_exec() {
   fi
 }
 
+# Removes dependencies using the detected package manager.
 _pm_remove() {
   local pm=$(_pm)
 
@@ -52,6 +57,7 @@ _pm_remove() {
   esac
 }
 
+# Adds dependencies using the detected package manager.
 _pm_add() {
   local pm=$(_pm)
 
@@ -81,6 +87,12 @@ _pm_add() {
   esac
 }
 
+# Jury-rigged fix for the `pi` coding agent: its install sometimes drifts
+# from the pinned SDK version in ~/.pi/agent/npm, causing version
+# inconsistencies. `pi-up` updates pi itself and/or its packages/extensions,
+# then re-pins @earendil-works/pi-coding-agent to the installed version and
+# reinstalls the SDK so everything matches again.
+# Usage: pi-up [all|extensions|self]
 pi-up() {
   local mode="${1:-self}"
 
